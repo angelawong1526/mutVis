@@ -1,0 +1,83 @@
+---
+title: "Introduction_mutVis"
+author: "Angela Wong"
+date: "`r format(Sys.time(), '%d %b %Y')`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction_mutVis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mutVis)
+```
+
+
+# Overview
+
+mutVis is a R package that compares the sequence of an unknown or mutated protein with a set of known protein sequences, finds the best matched ones, and plots the amino acid differences on a graph.
+
+
+# Installation
+
+mutVis is available on Gihub at https://github.com/angelawong1526/mutVis
+
+``` {r eval=FALSE}
+# install.packages("devtools")
+library(devtools)
+install_github("angelawong1526/mutVis")
+library("mutVis")
+```
+To run the shinyApp:
+```{r eval=FALSE}
+runMutVisApp()
+```
+To open the vignette in R:
+```{r eval=FALSE}
+browseVignettes("mutVis")
+```
+
+
+# Introduction to `mutVis`
+
+This package requires `seqinr, ggplot2, reshape, and utils` to be able to run.
+```{r eval=FALSE}
+library(seqinr)
+library(ggplot2)
+library(reshape)
+library(utils)
+```
+
+### Example Usage of `matchProt()`
+
+```{r fig.width=9, fig.height=6}
+unknownProt <- "MAVLILVLLAVVILQAAPIRKLEDLLPTRYPPDHELVYWCTYANQCDFCWECVHGICRNRIQADWPVIHQNDWIINCTVSRWNGICSYYEGPRNHTDHQMDCANPTSHTYPHREYMKIYERDDL"
+minPercent <- 95
+result <- matchProt(unknownProt, minMatch = minPercent)
+result
+```
+
+
+# Licencing
+
+`mutVis` is licensed under the MIT licence.
+- Citation: Wong, A (2020). mutVis. R. Retrieved from https://github.com/angelawong1526/mutVis.
+
+
+# References
+
+Charif, D. and Lobry, J.R. (2007). seqinr. https://cran.r-project.org/web/packages/seqinr/index.html
+R Core Team (2020). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/
+Wickham, H. and Bryan, J. (2019). R Packages (2nd edition). Newton, Massachusetts: O’Reilly Media. https://r-pkgs.org/
+
+## Acknowledgements
+
+This package was developed as part of an assessment for 2020 BCB410H: Applied Bioinformatics, University of Toronto, Toronto, CANADA.
