@@ -34,6 +34,7 @@ runMutVisApp()
 
 ``` r
 browseVignettes("mutVis")
+ls("package:mutVis")
 ```
 
 This package contains 6 functions to analyze and compare the input

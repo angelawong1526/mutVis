@@ -40,6 +40,7 @@ runMutVisApp()
 
 ```{r eval=FALSE}
 browseVignettes("mutVis")
+ls("package:mutVis")
 ```
 
 This package contains 6 functions to analyze and compare the input protein sequence with known protein sequences and to find the best matches with the input protein. The results are visualized on a scatter plot. There is one function available for the users:
