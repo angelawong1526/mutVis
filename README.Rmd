@@ -27,7 +27,8 @@ You can install the released version of mutVis from [GitHub](https://github.com)
 ``` {r eval=FALSE}
 # install.packages("devtools")
 library(devtools)
-install_github("angelawong1526/mutVis")
+require("devtools")
+devtools::install_github("angelawong1526/mutVis", build_vignettes = TRUE)
 library("mutVis")
 ```
 To run the shinyApp:

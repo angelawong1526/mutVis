@@ -19,7 +19,8 @@ You can install the released version of mutVis from
 ``` r
 # install.packages("devtools")
 library(devtools)
-install_github("angelawong1526/mutVis")
+require("devtools")
+devtools::install_github("angelawong1526/mutVis", build_vignettes = TRUE)
 library("mutVis")
 ```
 
