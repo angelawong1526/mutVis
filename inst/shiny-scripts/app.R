@@ -3,7 +3,7 @@ library(shiny)
 ui <- fluidPage(
 
   # Title
-  titlePanel("Location of mutations on protein and DNA sequence"),
+  titlePanel("Location of mutations on protein sequence"),
 
   # Sidebar layout
   sidebarLayout(
