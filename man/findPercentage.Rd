@@ -15,5 +15,13 @@ findPercentage(protSeq, knownProt)
 Numerical, The percentage of TRUE after comparing or 0 if the vectors are of different lengths
 }
 \description{
-A function that calculates the percentage of TRUE after comparing two vectors
+A helper function that calculates the percentage of TRUE after comparing two
+vectors
+}
+\examples{
+testing1 <- c("a", "b", "c", "d")
+testing2 <- c("a", "b", "e", "f")
+match <- mutVis:::findPercentage(testing1, testing2)
+match
+
 }

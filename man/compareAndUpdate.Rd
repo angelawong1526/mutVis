@@ -19,5 +19,14 @@ compareAndUpdate(unknown, known, protFrame, knownCount)
 An undated version of input dataframe
 }
 \description{
-A function that modifies the input data frame
+A helper function that modifies the input data frame
+}
+\examples{
+unknownTest <- c(1, 2, 3, 4, 5)
+knownTest <- c(1, 2, 3, 6, 7)
+emptyFrame <- data.frame(position = 1:length(unknownTest))
+emptyFrame[["known"]] <- NA
+knownCount = 2
+mutVis:::compareAndUpdate(unknownTest, knownTest, emptyFrame, knownCount)
+
 }

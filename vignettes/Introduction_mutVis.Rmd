@@ -16,7 +16,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, echo=FALSE}
+library(devtools)
+require("devtools")
+devtools::install_github("angelawong1526/mutVis", build_vignettes = TRUE)
 library(mutVis)
 ```
 
@@ -58,9 +61,9 @@ library(utils)
 
 ### Example Usage of `matchProt()`
 
-```{r fig.width=9, fig.height=6}
+```{r include=TRUE}
 unknownProt <- "MAVLILVLLAVVILQAAPIRKLEDLLPTRYPPDHELVYWCTYANQCDFCWECVHGICRNRIQADWPVIHQNDWIINCTVSRWNGICSYYEGPRNHTDHQMDCANPTSHTYPHREYMKIYERDDL"
-minPercent <- 95
+minPercent <- 85
 result <- matchProt(unknownProt, minMatch = minPercent)
 result
 ```

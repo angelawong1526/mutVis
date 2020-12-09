@@ -34,6 +34,7 @@ runMutVisApp()
 
 ``` r
 browseVignettes("mutVis")
+data(package = "mutVis")
 ls("package:mutVis")
 ```
 
@@ -47,11 +48,14 @@ scatter plot with all the amino acid differences found in known protein
 sequences. The amino acids are represented on the x-axis in numerical
 form; they follow the order of “A, G, I, L, P, V, F, W, Y, D, E, R, H,
 K, S, T, C, M, N, Q”, represented by number 1 through 20 (1 being “A”
-and 20 being “Q”).
+and 20 being “Q”). The amino acids have been ordered according to their
+properties. The first 6 are aliphatic, the next 3 are aromatic, the
+following 2 are acidic, the 12th to 14th are basic, 15 and 16 are
+hydroxylic, 17 and 18 are sulfur-containing, and the last 2 are amidic.
 
 ``` r
 unknownProt <- "MAVLILVLLAVVILQAAPIRKLEDLLPTRYPPDHELVYWCTYANQCDFCWECVHGICRNRIQADWPVIHQNDWIINCTVSRWNGICSYYEGPRNHTDHQMDCANPTSHTYPHREYMKIYERDDL"
-minPercent <- 95
+minPercent <- 80
 result <- matchProt(unknownProt, minMatch = minPercent)
 result
 ```
@@ -67,6 +71,12 @@ lsf.str("package:mutVis")
 
 The author of the package is Angela Wong.
 
+The package uses functions from `seqinr`, `utils`, `reshape`, `shiny`,
+and `ggplot2`. - `matchedProteins` uses `getName()` and
+`getSequence.SequenceAA()` from `seqinr`. This function is not available
+to the users. - The dataset was generated using `read.fasta()` from
+`seqinr`
+
 ## References
 
 Charif, D. and Lobry, J.R. (2007). seqinr.
@@ -76,8 +86,18 @@ R Core Team (2020). R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria.
 <https://www.R-project.org/>
 
+Wickham, H. (2007). Reshaping data with the reshape package. Journal of
+Statistical Software, 21(12). <http://www.jstatsoft.org/v21/i12/paper>
+
+Wickham, H. (2016). ggplot2: Elegant Graphics for Data Analysis.
+Springer-Verlag New York. <https://ggplot2.tidyverse.org>
+
 Wickham, H. and Bryan, J. (2019). R Packages (2nd edition). Newton,
 Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
+
+Winston Chang, Joe Cheng, JJ Allaire, Yihui Xie and Jonathan McPherson
+(2020). shiny: Web Application Framework for R. R package version 1.5.0.
+<https://CRAN.R-project.org/package=shiny>
 
 Wong, A (2020). mutVis. R. Retrieved from
 <https://github.com/angelawong1526/mutVis>.

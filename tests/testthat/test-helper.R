@@ -13,31 +13,34 @@ test_that("get percentage of same", {
 })
 
 
-test_that("matched works", {
+test_that("matchedProteins works", {
   unknownProt <- paste("MAVLILVLLAVVILQAAPIRKLEDLLPTRYPPDHELVYWCTYANQCDFCWECVH",
                        "GICRNRIQADWPVIHQNDWIINCTVSRWNGICSYYEGPRNHTDHQMDCANPTSH",
                        "TYPHREYMKIYERDDL", sep = "")
   minPercent <- 85
   inputProt <- seqinr::s2c(unknownProt)
-  protData <- matched(inputProt, dataset = protData, minPercent)
+  protData <- matchedProteins(inputProt, dataset = protData, minPercent)
 
-  expect_equal(ncol(protData), (length(inputProt) + 1))
-  expect_equal(protData[1, 1], protData[2, 1])
-})
-
-
-test_that("get empty data frame", {
-  randomVec <- c(1, 2, 3, 4)
-  newDF <- emptyDF(randomVec)
-
-  expect_equal(ncol(newDF), (length(randomVec) + 1))
+  expect_equal(nrow(protData), length(inputProt))
 })
 
 
 test_that("get vector with all amino acid letters converted into numbers", {
   randomProtein <- c("A", "M", "N", "L")
-  randomProteinNum <- c2n(randomProtein)
+  randomProteinNum <- chrToNum(randomProtein)
   proteinNum <- as.numeric(c(1, 18, 19, 4))
 
   expect_equal(randomProteinNum, proteinNum)
+})
+
+test_that("test compareAndUpdate works", {
+  unknownTest <- c(1, 2, 3, 4, 5)
+  knownTest <- c(1, 2, 3, 6, 7)
+  emptyFrame <- data.frame(position = 1:length(unknownTest))
+  emptyFrame[["known"]] <- NA
+  knownCount = 2
+  updated <- compareAndUpdate(unknownTest, knownTest, emptyFrame, knownCount)
+
+  expect_equal(updated[1, 2], 0)
+  expect_equal(updated[5, 2], 7)
 })
