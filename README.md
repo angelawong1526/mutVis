@@ -60,7 +60,7 @@ result <- matchProt(unknownProt, minMatch = minPercent)
 result
 ```
 
-![](./man/Rplot.png)
+![](./man/mutVisPlot.png)
 
 ## Contributions
 
