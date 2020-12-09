@@ -1,0 +1,12 @@
+citHeader("To cite mutVis in publications use:")
+
+citEntry(
+  entry       = "unpublished",
+  title       = "mutVis",
+  author      = "Angela Wong",
+  note        = "unpublished",
+  year        = "2020",
+  testVersion =
+  paste("Wong, A (2020). mutVis. R.",
+  "Retrieved from https://github.com/angelawong1526/mutVis.")
+)
