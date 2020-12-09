@@ -49,6 +49,9 @@ findPercentage <- function(protSeq, knownProt) {
 #' result <- mutVis:::matchedProteins(unknown1, protData, minMatch)
 #' result
 #'
+#' @references
+#' Charif, D. and Lobry, J.R. (2007). seqinr. https://cran.r-project.org/web/packages/seqinr/index.html
+#'
 #' @import seqinr
 #'
 #'

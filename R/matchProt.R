@@ -18,6 +18,13 @@
 #' result <- matchProt(unknownProt, minMatch = minPercent)
 #' result
 #'
+#'
+#' @references
+#' Charif, D. and Lobry, J.R. (2007). seqinr. https://cran.r-project.org/web/packages/seqinr/index.html
+#' Wickham, H. (2007). Reshaping data with the reshape package. Journal of Statistical Software, 21(12). http://www.jstatsoft.org/v21/i12/paper
+#' Wickham, H. (2016). ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org
+#'
+#'
 #' @export
 #' @import ggplot2
 #' @import reshape
